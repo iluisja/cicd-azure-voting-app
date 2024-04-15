@@ -12,9 +12,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '450e4ae3-a5f4-4e80-ac00-a5aa44cf9bcf'
   imageRepository: 'resultapp'
-  containerRegistry: 'registryvoting.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/result/Dockerfile'
   tag: '$(Build.BuildId)'
 
@@ -31,7 +29,7 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        containerRegistry: '$(dockerRegistryServiceConnection)'
+        containerRegistry: 'appregistryvoting'
         repository: '$(imageRepository)'
         command: 'build'
         Dockerfile: 'result/Dockerfile'
@@ -46,7 +44,7 @@ stages:
     - task: Docker@2
       displayName: Push an image
       inputs:
-        containerRegistry: '$(dockerRegistryServiceConnection)'
+        containerRegistry: 'appregistryvoting'
         repository: '$(imageRepository)'
         command: 'push'
         Dockerfile: 'result/Dockerfile'
