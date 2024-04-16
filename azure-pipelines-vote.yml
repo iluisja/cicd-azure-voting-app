@@ -49,3 +49,14 @@ stages:
         command: 'push'
         Dockerfile: 'vote/Dockerfile'
         tags: '$(tag)'
+
+- stage: Update
+  displayName: Update
+  jobs:
+  - job: Update
+    displayName: Update
+    steps:
+      - task: ShellScript@2
+        inputs:
+          scriptPath: '/scripts'
+          args: 'vote $(hola)'
