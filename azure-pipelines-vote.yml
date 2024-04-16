@@ -56,7 +56,7 @@ stages:
   - job: Update
     displayName: Update
     steps:
-      - task: ShellScript@2
-        inputs:
-          scriptPath: '/scripts/update-k8s.sh'
-          args: 'vote $(imageRepository) $(tag)'
+    - task: ShellScript@2
+      inputs:
+        scriptPath: '/scripts/update-k8s.sh'
+        args: 'vote $(imageRepository) $(tag)'
