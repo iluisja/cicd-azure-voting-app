@@ -51,12 +51,12 @@ stages:
         tags: '$(tag)'
 
 - stage: Update
-  displayName: Update
+  displayName: Update 
   jobs:
   - job: Update
     displayName: Update
     steps:
     - task: ShellScript@2
       inputs:
-        scriptPath: '/scripts/update-k8s.sh'
+        scriptPath: 'scripts/update-k8s.sh'
         args: 'vote $(imageRepository) $(tag)'
