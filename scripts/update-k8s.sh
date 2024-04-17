@@ -2,6 +2,8 @@
 
 set -x
 
+echo "Actualizando Kubernetes..."
+
 # Set the repository URL
 REPO_URL="https://wteioaupjyy7jxx6an5zxfzphp5ygiydzsraiwegqrumqiat6rua@dev.azure.com/0619627002/votingappdevops/_git/votingappdevops"
 
