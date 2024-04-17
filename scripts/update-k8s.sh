@@ -2,7 +2,7 @@
 
 set -x
 
-echo "Luigui"
+echo "Luigui $1 $2 $3"
 
 # Set the repository URL
 REPO_URL="https://wteioaupjyy7jxx6an5zxfzphp5ygiydzsraiwegqrumqiat6rua@dev.azure.com/0619627002/votingappdevops/_git/votingappdevops"
@@ -12,6 +12,11 @@ git clone "$REPO_URL" /tmp/temp_repo
 
 # Navigate into the cloned repository directory
 cd /tmp/temp_repo
+
+if [ $? -ne 0 ]; then
+    echo "Error al clonar el repositorio. Verifica la URL y los permisos."
+    exit 1
+fi
 
 # Make changes to the Kubernetes manifest file(s)
 # For example, let's say you want to change the image tag in a deployment.yaml file
