@@ -51,7 +51,7 @@ stages:
         tags: '$(tag)'
 
 - stage: Update
-  displayName: Update $(imageRepository) $(tag)
+  displayName: Update
   jobs:
   - job: Update
     displayName: Update
