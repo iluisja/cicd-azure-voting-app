@@ -50,13 +50,13 @@ stages:
         Dockerfile: 'vote/Dockerfile'
         tags: '$(tag)'
 
-- stage: Update
-  displayName: Update
-  jobs:
-  - job: Update
-    displayName: Update
-    steps:
-    - task: ShellScript@2
-      inputs:
-        scriptPath: 'scripts/updateK8sManifests.sh'
-        args: 'vote $(imageRepository) $(tag)'
+#- stage: Update
+#  displayName: Update
+#  jobs:
+#  - job: Update
+#    displayName: Update
+#    steps:
+#    - task: ShellScript@2
+#      inputs:
+#        scriptPath: 'scripts/updateK8sManifests.sh'
+#        args: 'vote $(imageRepository) $(tag)'
